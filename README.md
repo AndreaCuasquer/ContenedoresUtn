@@ -1,4 +1,4 @@
-# Random User project using ReactJS
+# Proyecto de Contenedores UTN
 
 Este proyecto fue desarrollado con las siguientes tecnologías :
 
