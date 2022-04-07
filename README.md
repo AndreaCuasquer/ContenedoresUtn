@@ -3,6 +3,7 @@
 Este proyecto fue desarrollado con las siguientes tecnologías :
 
 - HTML v5.
+- Vanilla Javascript
 - TailwindCSS.
 - Servicio de MQTT - HIVEMQ [Link](https://www.hivemq.com).
 - API Google Maps.
