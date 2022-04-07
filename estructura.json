@@ -1,0 +1,27 @@
+{
+    "contenedores":
+    [
+        {
+            "name":"1",
+            "volumen":"23",
+            "co2":"234",
+            "peso":"23",
+            "ubicacion":{
+                "lat":"0.3382770",
+                "long":"-78.1267512"
+            },
+            "state":"lleno"
+        },
+        {
+            "name":"2",
+            "volumen":"12",
+            "co2":"33",
+            "peso":"144",
+            "ubicacion":{
+                "lat":"0.3380000",
+                "long":"-78.1267512"
+            },
+            "state":"lleno"
+        }
+    ]
+}
