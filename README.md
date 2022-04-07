@@ -15,4 +15,10 @@ Este proyecto fue desarrollado con las siguientes tecnologías :
 
 ## Previsualización del Proyecto
 
-<img src="./public/preview.png" alt="Preview project" width="400" />
+<img src="./imagenes/contenedor1.png" alt="Preview project" width="400" />
+<hr>
+<img src="./imagenes/contenedor2.png" alt="Preview project" width="400" />
+<hr>
+<img src="./imagenes/ubicacion.png" alt="Preview project" width="400" />
+
+<p align="center"><sup>© 2021-2022 ANDREA CUASQUER - UTN</sup></p>
