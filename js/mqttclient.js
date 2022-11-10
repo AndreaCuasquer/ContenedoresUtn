@@ -8,8 +8,7 @@ let wsport = 8000; // port for above
 let client = new Paho.MQTT.Client(
 	wsbroker,
 	wsport,
-	"/ws",
-	"myclientid_" + parseInt(Math.random() * 100)
+	"myclientid_" + parseInt(Math.random() * 100, 10)
 );
 
 client.onConnectionLost = function (responseObject) {
@@ -21,7 +20,6 @@ client.onConnectionLost = function (responseObject) {
 /*################################################################################################*/
 
 client.onMessageArrived = function (message) {
-	console.log(message.payloadString);
 	let json = JSON.parse(message.payloadString);
 	/* Contenedor 1 */
 	document.getElementById("contenedorUnoVolumen").innerHTML =
@@ -39,39 +37,28 @@ client.onMessageArrived = function (message) {
 		json.contenedores[1].co2 + " ..";
 	document.getElementById("contenedorDosPeso").innerHTML =
 		json.contenedores[1].peso + " kg";
-	console.log(json.contenedores[0].ubicacion.lat);
 
-	let contenedorUnoUbicacionLat ="";
-	let contenedorUnoUbicacionLong ="";
-	let contenedorDosUbicacionLat ="";
-	let contenedorDosUbicacionLong ="";
+	let contenedorUnoUbicacionLat = "";
+	let contenedorUnoUbicacionLong = "";
+	let contenedorDosUbicacionLat = "";
+	let contenedorDosUbicacionLong = "";
 
 	/*################################################################################################*/
 	/*####################################### VALIADAR SI ESTA LLENO EL CONTENEDOR####################*/
 	/*################################################################################################*/
 
-	if(json.contenedores[0].state=="lleno"){
-		contenedorUnoUbicacionLat=json.contenedores[0].ubicacion.lat;
-		contenedorUnoUbicacionLong=json.contenedores[0].ubicacion.long;
+	if (json.contenedores[0].state == "lleno") {
+		contenedorUnoUbicacionLat = json.contenedores[0].ubicacion.lat;
+		contenedorUnoUbicacionLong = json.contenedores[0].ubicacion.long;
 	}
-	if(json.contenedores[1].state=="lleno"){
-		contenedorDosUbicacionLat=json.contenedores[1].ubicacion.lat;
-		contenedorDosUbicacionLong=json.contenedores[1].ubicacion.long;
+	if (json.contenedores[1].state == "lleno") {
+		contenedorDosUbicacionLat = json.contenedores[1].ubicacion.lat;
+		contenedorDosUbicacionLong = json.contenedores[1].ubicacion.long;
 	}
 
 	let location = [
-		[
-			"Contenedor 1",
-			contenedorUnoUbicacionLat,
-			contenedorUnoUbicacionLong,
-			1,
-		],
-		[
-			"Contenedor 2",
-			contenedorDosUbicacionLat,
-			contenedorDosUbicacionLong,
-			2,
-		],
+		["Contenedor 1", contenedorUnoUbicacionLat, contenedorUnoUbicacionLong, 1],
+		["Contenedor 2", contenedorDosUbicacionLat, contenedorDosUbicacionLong, 2],
 	];
 
 	/*################################################################################################*/
