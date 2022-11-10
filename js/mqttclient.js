@@ -8,7 +8,8 @@ let wsport = 8000; // port for above
 let client = new Paho.MQTT.Client(
 	wsbroker,
 	wsport,
-	"myclientid_" + parseInt(Math.random() * 100, 10)
+	"/ws",
+	"myclientid_" + parseInt(Math.random() * 100)
 );
 
 client.onConnectionLost = function (responseObject) {
