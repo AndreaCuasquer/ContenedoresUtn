@@ -1,7 +1,7 @@
 # Red mesh LPWAN mediante el uso del estándar IEEE 802.15.4g para la recolección de datos sobre variables en los contenedores de residuos sólidos del sector Yacucalle - Ibarra - Ecuador
 
 Este proyecto fue desarrollado con las siguientes tecnologías :
-
+ 
 - HTML v5.
 - Vanilla Javascript.
 - TailwindCSS.
