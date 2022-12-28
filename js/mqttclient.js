@@ -2,7 +2,7 @@
 /*####################################### CLIENTE MQTT ###########################################*/
 /*################################################################################################*/
 
-let wsbroker = "broker.mqttdashboard.com";
+let wsbroker = "broker.hivemq.com";
 let wsport = 8000; // port for above
 
 let client = new Paho.MQTT.Client(
