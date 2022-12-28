@@ -23,7 +23,7 @@ client.onMessageArrived = function (message) {
 	let json = JSON.parse(message.payloadString);
 	/* Contenedor 1 */
 	document.getElementById("contenedorUnoVolumen").innerHTML =
-		json.contenedores[0].volumen + " m3";
+		json.contenedores[0].volumen + " %";
 	document.getElementById("contenedorUnoCo").innerHTML =
 		json.contenedores[0].co2 + " ..";
 	document.getElementById("contenedorUnoPeso").innerHTML =
@@ -32,7 +32,7 @@ client.onMessageArrived = function (message) {
 
 	/* Contenedor 2 */
 	document.getElementById("contenedorDosVolumen").innerHTML =
-		json.contenedores[1].volumen + " m3";
+		json.contenedores[1].volumen + " %";
 	document.getElementById("contenedorDosCo").innerHTML =
 		json.contenedores[1].co2 + " ..";
 	document.getElementById("contenedorDosPeso").innerHTML =
@@ -44,7 +44,7 @@ client.onMessageArrived = function (message) {
 	let contenedorDosUbicacionLong = "";
 
 	/*################################################################################################*/
-	/*####################################### VALIADAR SI ESTA LLENO EL CONTENEDOR####################*/
+	/*####################################### VALIDAR SI ESTA LLENO EL CONTENEDOR####################*/
 	/*################################################################################################*/
 
 	if (json.contenedores[0].state == "full") {
