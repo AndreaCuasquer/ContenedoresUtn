@@ -47,11 +47,11 @@ client.onMessageArrived = function (message) {
 	/*####################################### VALIADAR SI ESTA LLENO EL CONTENEDOR####################*/
 	/*################################################################################################*/
 
-	if (json.contenedores[0].state == "lleno") {
+	if (json.contenedores[0].state == "full") {
 		contenedorUnoUbicacionLat = json.contenedores[0].ubicacion.lat;
 		contenedorUnoUbicacionLong = json.contenedores[0].ubicacion.long;
 	}
-	if (json.contenedores[1].state == "lleno") {
+	if (json.contenedores[1].state == "full") {
 		contenedorDosUbicacionLat = json.contenedores[1].ubicacion.lat;
 		contenedorDosUbicacionLong = json.contenedores[1].ubicacion.long;
 	}
