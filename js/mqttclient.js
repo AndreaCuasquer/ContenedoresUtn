@@ -21,40 +21,40 @@ client.onConnectionLost = function (responseObject) {
 
 client.onMessageArrived = function (message) {
 	let json = JSON.parse(message.payloadString);
-	/* Contenedor 1 */
-	document.getElementById("contenedorUnoVolumen").innerHTML =
-		json.contenedores[0].volumen + " %";
-	document.getElementById("contenedorUnoCo").innerHTML =
-		json.contenedores[0].co2 + " ..";
-	document.getElementById("contenedorUnoPeso").innerHTML =
-		json.contenedores[0].peso + " kg";
-	0;
-
-	/* Contenedor 2 */
-	document.getElementById("contenedorDosVolumen").innerHTML =
-		json.contenedores[1].volumen + " %";
-	document.getElementById("contenedorDosCo").innerHTML =
-		json.contenedores[1].co2 + " ..";
-	document.getElementById("contenedorDosPeso").innerHTML =
-		json.contenedores[1].peso + " kg";
-
 	let contenedorUnoUbicacionLat = "";
 	let contenedorUnoUbicacionLong = "";
 	let contenedorDosUbicacionLat = "";
 	let contenedorDosUbicacionLong = "";
+	/* Contenedor 1 */
+	if(json.contenedores[0].name=="1"){
+		document.getElementById("contenedorUnoVolumen").innerHTML =
+		json.contenedores[0].volumen + " %";
+		document.getElementById("contenedorUnoCo").innerHTML =
+		json.contenedores[0].co2 + " ..";
+		document.getElementById("contenedorUnoPeso").innerHTML =
+		json.contenedores[0].peso + " kg";
+		if (json.contenedores[0].state == "full") {
+			contenedorUnoUbicacionLat = json.contenedores[0].ubicacion.lat;
+			contenedorUnoUbicacionLong = json.contenedores[0].ubicacion.long;
+		}
+	}
+	/* Contenedor 2 */
+	if(json.contenedores[0].name=="2"){
+		document.getElementById("contenedorDosVolumen").innerHTML =
+		json.contenedores[0].volumen + " %";
+		document.getElementById("contenedorDosCo").innerHTML =
+		json.contenedores[0].co2 + " ..";
+		document.getElementById("contenedorDosPeso").innerHTML =
+		json.contenedores[0].peso + " kg";
+		if (json.contenedores[0].state == "full") {
+			contenedorDosUbicacionLat = json.contenedores[0].ubicacion.lat;
+			contenedorDosUbicacionLong = json.contenedores[0].ubicacion.long;
+		}
+	}
 
 	/*################################################################################################*/
 	/*####################################### VALIDAR SI ESTA LLENO EL CONTENEDOR####################*/
 	/*################################################################################################*/
-
-	if (json.contenedores[0].state == "full") {
-		contenedorUnoUbicacionLat = json.contenedores[0].ubicacion.lat;
-		contenedorUnoUbicacionLong = json.contenedores[0].ubicacion.long;
-	}
-	if (json.contenedores[1].state == "full") {
-		contenedorDosUbicacionLat = json.contenedores[1].ubicacion.lat;
-		contenedorDosUbicacionLong = json.contenedores[1].ubicacion.long;
-	}
 
 	let location = [
 		["Contenedor 1", contenedorUnoUbicacionLat, contenedorUnoUbicacionLong, 1],
